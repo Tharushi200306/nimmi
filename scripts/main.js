@@ -16,28 +16,28 @@ const events = [
     },
      {
         title: "Cybersecurity in the Cloud Era",
-        type: "TALK",
+        type: "Talks",
         date: "2025-11-20T11:00:00",
         description: "Nov 20, 2025, 11:00Am Cybersecurity in the Cloud Era",
         image: "WhatsApp Image 2025-11-13 at 21.21.49.jpeg"
     },
     {
         title: "Introduction to Quantum Computing",
-        type: "TALK",
+        type: "Talks",
         date: "2025-11-20T14:00:00",
         description: " Introys with eachers, soddeson",
         image: "WhatsApp Image 2025-11-13 at 21.48.54.jpeg"
     },
      {
         title: "Notworking Mixer & Welcome Reception",
-        type: "SOCIAL",
+        type: "Social",
         date: "2025-11-20T17:00:00",
         description: "Networking miver & welcome reception",
         image: "WhatsApp Image 2025-11-13 at 22.04.33.jpeg"
     },
     {
         title: "The Ethics of Machine Learning",
-        type: "TALK",
+        type: "Talks",
         date: "2025-11-21T09:00:00",
         description: " From cooling to tyour seolls",
         image: "WhatsApp Image 2025-11-13 at 22.04.31.jpeg"
