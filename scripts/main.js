@@ -73,6 +73,7 @@ function displayEvents() {
                 <p><strong>Date:</strong> ${new Date(event.date).toLocaleString()}</p>
                 <p>${highlightText(event.description, searchQuery)}</p>
                 <div class="countdown" data-date="${event.date}"></div>
+                <button class="add-calendar">Add to Calendar</button>
             </div>
         `;
         container.appendChild(card);
@@ -143,6 +144,7 @@ themeToggle.addEventListener("click", () => {
     localStorage.setItem("theme", isDark ? "dark" : "light");
     themeToggle.textContent = isDark ? "☀️" : "🌙";
 });
+
 // Add to Google Calendar
 document.addEventListener("click", function(e){
     if(e.target && e.target.classList.contains("add-calendar")){
