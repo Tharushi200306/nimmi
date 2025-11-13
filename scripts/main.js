@@ -27,6 +27,7 @@ const events = [
         description: " Introys with eachers, soddeson",
         image: "github image/WhatsApp Image 2025-11-13 at 21.21.49.jpeg"
     },
+    
     // Add all other events here...
 ];
 
