@@ -16,14 +16,14 @@ const events = [
     },
      {
         title: "Cybersecurity in the Cloud Era",
-        type: "Talks",
+        type: "Talk",
         date: "2025-11-20T11:00:00",
         description: "Nov 20, 2025, 11:00Am Cybersecurity in the Cloud Era",
         image: "WhatsApp Image 2025-11-13 at 21.21.49.jpeg"
     },
     {
         title: "Introduction to Quantum Computing",
-        type: "Talks",
+        type: "Talk",
         date: "2025-11-20T14:00:00",
         description: " Introys with eachers, soddeson",
         image: "WhatsApp Image 2025-11-13 at 21.48.54.jpeg"
