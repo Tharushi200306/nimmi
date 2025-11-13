@@ -37,7 +37,7 @@ const events = [
     },
     {
         title: "The Ethics of Machine Learning",
-        type: "Talks",
+        type: "Panels",
         date: "2025-11-21T09:00:00",
         description: " From cooling to tyour seolls",
         image: "WhatsApp Image 2025-11-13 at 22.04.31.jpeg"
