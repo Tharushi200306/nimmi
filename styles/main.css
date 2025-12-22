@@ -1,63 +1,46 @@
-/* Global Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f4f4f4;
-    color: #333;
-}
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+/* Global */
+body { font-family: 'Segoe UI', sans-serif; background:#f4f6f8; color:#333; transition:0.3s; }
+a { text-decoration:none; color:inherit; }
 
 /* Header */
-header {
-    background-color: #222;
-    color: white;
-    padding: 15px;
-    text-align: center;
-}
+.header { display:flex; justify-content:space-between; align-items:center; background:#111; color:white; padding:15px 30px; }
+.logo { font-size:24px; }
+.nav-links { list-style:none; display:flex; gap:20px; }
+.nav-links a:hover { color:#00c3ff; }
+#themeToggle { background:none; border:none; font-size:22px; cursor:pointer; color:white; }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
+/* Main Layout */
+main { max-width:900px; margin:40px auto; padding:0 20px; }
 
-nav ul li {
-    margin: 0 10px;
-}
+/* Card */
+.card { background:white; padding:25px; margin-bottom:30px; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.08); }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
+/* About Photo */
+.about-card { text-align:center; }
+.profile-img { width:160px; height:160px; object-fit:cover; border-radius:50%; border:4px solid #00c3ff; margin-bottom:15px; box-shadow:0 8px 20px rgba(0,0,0,0.2); }
+.role { color:#777; margin-bottom:10px; }
 
-/* Card Sections */
-.card {
-    background: white;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
-}
+/* Projects Grid */
+.projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+.project { background:#f0f0f0; padding:15px; border-radius:10px; transition: transform 0.3s; }
+.project:hover { transform: translateY(-5px); }
 
-/* Buttons */
-button {
-    padding: 8px 15px;
-    cursor: pointer;
-}
-
-/* Dark Mode */
-.dark {
-    background-color: #121212;
-    color: white;
-}
-
-.dark .card {
-    background-color: #1e1e1e;
-}
+/* Form */
+form { display:flex; flex-direction:column; gap:12px; }
+input, textarea { padding:10px; border-radius:8px; border:1px solid #ccc; font-size:15px; }
+button { padding:12px; background:#00c3ff; border:none; border-radius:10px; color:white; font-size:16px; cursor:pointer; }
+button:hover { background:#0099cc; }
 
 /* Footer */
-footer {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
+footer { text-align:center; padding:15px; background:#111; color:white; }
+
+/* Dark Mode */
+.dark { background:#121212; color:white; }
+.dark .card { background:#1e1e1e; }
+.dark .profile-img { border-color:#00e5ff; }
+
+/* Animations */
+@keyframes fadeUp { from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);} }
