@@ -1,37 +1,30 @@
-/* Dark Mode Toggle */
-const themeBtn = document.getElementById("themeBtn");
-
-themeBtn.addEventListener("click", () => {
+/* Dark Mode */
+const toggleBtn = document.getElementById("themeToggle");
+toggleBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
+    toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
 });
 
-/* Dynamic Projects */
+/* Projects */
 const projects = [
-    { title: "Portfolio Website", description: "Personal portfolio project" },
-    { title: "Student Management System", description: "CRUD application" },
-    { title: "Health App", description: "Biomedical related project" }
+    { title:"Personal Portfolio Website", desc:"My professional student portfolio using HTML, CSS, JS" },
+    { title:"Simple Business Website", desc:"Static business site with responsive layout" },
+    { title:"Landing Page", desc:"Front-end landing page demo project" },
+    { title:"Contact Form", desc:"Functional form with validation and JS" }
 ];
 
-const projectList = document.getElementById("projectList");
-
-projects.forEach(project => {
-    const div = document.createElement("div");
-    div.innerHTML = `<h3>${project.title}</h3><p>${project.description}</p>`;
-    projectList.appendChild(div);
+const projectContainer = document.getElementById("projectContainer");
+projects.forEach(p=>{
+    const div=document.createElement("div");
+    div.className="project";
+    div.innerHTML=`<h3>${p.title}</h3><p>${p.desc}</p>`;
+    projectContainer.appendChild(div);
 });
 
-/* Form Handling */
-const form = document.getElementById("contactForm");
-
-form.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
-
-    console.log(name, email, message);
-    alert("Message sent successfully!");
-
+/* Form Submission */
+const form=document.getElementById("contactForm");
+form.addEventListener("submit", e=>{
+    e.preventDefault();
+    alert("Message sent successfully ✅");
     form.reset();
 });
