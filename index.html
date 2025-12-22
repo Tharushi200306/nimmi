@@ -2,37 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>My Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechCon 2025 Event Schedule</title>
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <header>
-        <h1>TechCon 2025 Event Schedule</h1>
-        <div class="controls">
-            <div class="filters">
-                <button data-type="All" class="active">All</button>
-                <button data-type="Keynote">Keynotes</button>
-                <button data-type="Talk">Talks</button>
-                <button data-type="Workshop">Workshops</button>
-                <button data-type="Panel">Panels</button>
-                <button data-type="Social">Social</button>
-            </div>
-            <input type="text" id="search" placeholder="Search events...">
-            <button id="theme-toggle">🌙</button>
-        </div>
-    </header>
 
-    <main>
-        <section id="event-container">
-            
-        </section>
-    </main>
+<header>
+    <h1>Kasuri Balasooriya</h1>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <button id="themeBtn">Dark Mode</button>
+</header>
 
-    <footer>
-        &copy; 2025 TechCon. All Rights Reserved.
-    </footer>
+<main>
+    <section id="about" class="card">
+        <h2>About Me</h2>
+        <p>I am a student learning Web Application Development.</p>
+    </section>
 
-    <script src="scripts/main.js"></script>
+    <section id="projects" class="card">
+        <h2>Projects</h2>
+        <div id="projectList"></div>
+    </section>
+
+    <section id="contact" class="card">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <label>Name:</label>
+            <input type="text" id="name" required>
+
+            <label>Email:</label>
+            <input type="email" id="email" required>
+
+            <label>Message:</label>
+            <textarea id="message" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 My Portfolio</p>
+</footer>
+
+<!-- JavaScript -->
+<script src="scripts/main.js"></script>
 </body>
 </html>
