@@ -9,75 +9,111 @@
 <body>
 
 <header class="header">
-    <h1 class="logo">My Portfolio</h1>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <button id="themeToggle">🌙</button>
+  <h1 class="logo">My Portfolio</h1>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <button id="themeToggle">🌙</button>
 </header>
 
 <main>
 
-<!-- About Me -->
-<section id="about" class="card about-card">
-    <img src="WhatsApp Image 2025-11-13 at 21.11.03.jpeg" alt="Profile Photo" class="profile-img">
-    <h2>Tharushi Akarshani</h2>
-    <p class="role">Biomedical Technology Undergraduate</p>
-    <p>I am an undergraduate Biomedical Technology student with a strong interest in front-end web development and digital design. I enjoy combining technology and creativity to build user-friendly websites.</p>
+<!-- Home -->
+<section id="home" class="card animate glow-blue">
+  <h2>Welcome 👋</h2>
+  <p>Hello! I'm <strong>Tharushi Akarshani</strong>, a Biomedical Technology undergraduate passionate about web development.</p>
+</section>
+
+<!-- About -->
+<section id="about" class="card animate glow-purple">
+  <div class="about-card">
+    <img src="WhatsApp Image 2025-12-23 at 19.48.58.jpeg" alt="Profile Photo" class="profile-img">
+    <h2>About Me</h2>
+    <div class="glass-card">
+      <p class="role">Biomedical Technology Undergraduate</p>
+      <p>I am an undergraduate student with a strong interest in front-end web development and digital design. I enjoy combining technology and creativity to build user-friendly websites.</p>
+    </div>
+  </div>
 </section>
 
 <!-- Education -->
-<section id="education" class="card">
-    <h2>Education</h2>
+<section id="education" class="card animate glow-blue">
+  <h2>Education</h2>
+  <div class="glass-card">
     <p>University of Colombo, BSc (Hons) Biomedical Technology, Year 2</p>
+  </div>
+  <div class="glass-card">
     <p>A/L: 3As | O/L: 9As</p>
+  </div>
 </section>
 
 <!-- Skills -->
-<section id="skills" class="card">
-    <h2>Skills</h2>
-    <h3>Technical Skills</h3>
-    <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript (basic)</li>
-        <li>Responsive Design</li>
-        <li>Front-end Web Development</li>
-    </ul>
-    <h3>Soft Skills</h3>
-    <ul>
-        <li>Communication</li>
-        <li>Teamwork</li>
-        <li>Leadership</li>
-        <li>Problem Solving</li>
-    </ul>
+<section id="skills" class="card animate glow-purple">
+  <h2>Skills</h2>
+  <h3>Technical Skills</h3>
+  <div class="skills-grid">
+    <div class="glass-card">HTML</div>
+    <div class="glass-card">CSS</div>
+    <div class="glass-card">JavaScript</div>
+    <div class="glass-card">Responsive Design</div>
+    <div class="glass-card">Front-end Web Development</div>
+  </div>
+  <h3>Soft Skills</h3>
+  <div class="skills-grid">
+    <div class="glass-card">Communication</div>
+    <div class="glass-card">Teamwork</div>
+    <div class="glass-card">Leadership</div>
+    <div class="glass-card">Problem Solving</div>
+  </div>
 </section>
 
 <!-- Projects -->
-<section id="projects" class="card">
-    <h2>Projects</h2>
-    <div id="projectContainer" class="projects-grid"></div>
+<section id="projects" class="card animate glow-blue">
+  <h2>Projects</h2>
+  <div id="projectContainer" class="projects-grid">
+    <!-- Dynamic projects inserted by JS -->
+  </div>
 </section>
 
 <!-- Contact -->
-<section id="contact" class="card">
-    <h2>Contact Me</h2>
-    <form id="contactForm">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
+<section id="contact" class="card animate glow-purple">
+  <h2>Contact Me</h2>
+  <form id="contactForm">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
 </section>
+<div id="preloader">
+    <div class="butterfly-area">
+        <div class="butterfly"></div>
+        <div class="butterfly"></div>
+        <div class="butterfly"></div>
+        <div class="butterfly"></div>
+    </div>
+
+    <div class="loader-box">
+        <div class="princess-container">
+            <img src="download (1).jpg" alt="Princess" class="princess-img">
+        </div>
+        <h2 class="welcome-text">Hi, Welcome! ✨</h2>
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+    </div>
+</div>
+</main>
 
 <footer>
-    <p>© 2025 My Portfolio | Email: example@gmail.com | Phone: +94 71 2345678</p>
+  <p>© 2025 My Portfolio | Email: tharunimmi@gmail.com | Phone: +94 75 090  7965</p>
 </footer>
 
 <script src="scripts/main.js"></script>
