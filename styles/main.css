@@ -25,7 +25,7 @@ body.dark { background: linear-gradient(135deg, #0f172a, #020617); color:white; 
 }
 
 /* ---------------- 3. HEADER & NAV ---------------- */
-.header { display:flex; justify-content:space-between; align-items:center; background:#111; color:white; padding:15px 30px; position: sticky; top: 0; z-index: 1000;
+.header { display:flex; justify-content:space-between; align-items:center; background:#111; color:white; padding:15px 30px; position: sticky; top: 0; z-index: 1000; width:100%;
 }
 .logo { font-size:24px; font-weight:bold; }
 .nav-links { list-style:none; display:flex; gap:20px; }
