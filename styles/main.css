@@ -1,149 +1,217 @@
-/* RESET */
+/* ---------------- 1. RESET & BASE ---------------- */
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: 'Poppins', sans-serif; background:#f4f6f8; color:#333; transition:0.3s; overflow-x:hidden;}
+body { 
+    font-family: 'Poppins', sans-serif; 
+    background:#f4f6f8; 
+    color:#333; 
+    transition: 0.3s; 
+    overflow-x:hidden;
+}
 a { text-decoration:none; color:inherit; }
 
-/* DARK MODE */
-body.dark { background: linear-gradient(135deg, #0f172a, #020617); color:white; }
+/* ---------------- 2. DARK MODE ---------------- */
+body.dark { 
+    background: linear-gradient(135deg, #0f172a, #020617); 
+    color:white; 
+}
+/* Profile Image Styling */
+.profile-img { 
+    width: 140px;  /*  */
+    height: 140px; /*  */
+    object-fit: cover; 
+    border-radius: 50%; 
+    border: 4px solid #bc13fe; /* Purple border එකක් */
+    display: block;
+    margin: 0 auto 20px auto; /* මැදට ගැනීමට */
+    animation: profileGlow 3s infinite alternate; /* Glow animation එක */
+    transition: 0.5s;
+}
 
-/* HEADER */
-.header { display:flex; justify-content:space-between; align-items:center; background:#111; color:white; padding:15px 30px; }
+/* Mouse change */
+.profile-img:hover {
+    transform: scale(1.1) rotate(5deg);
+    border-color: #00d2ff;
+    box-shadow: 0 0 30px #00d2ff;
+}
+
+/* Profile Glow Animation */
+@keyframes profileGlow {
+    0% { 
+        box-shadow: 0 0 10px #bc13fe, inset 0 0 5px #bc13fe; 
+    }
+    100% { 
+        box-shadow: 0 0 25px #bc13fe, 0 0 40px #00d2ff; 
+    }
+}
+
+/* ---------------- 3. HEADER & NAV ---------------- */
+.header { 
+    display:flex; justify-content:space-between; align-items:center; 
+    background:#111; color:white; padding:15px 30px; 
+    position: sticky; top: 0; z-index: 1000;
+}
 .logo { font-size:24px; font-weight:bold; }
 .nav-links { list-style:none; display:flex; gap:20px; }
-.nav-links a { position:relative; padding:5px 8px; transition:color 0.3s;}
-.nav-links a:hover { color:#00c3ff; }
-.nav-links a.active { color:#00c3ff; font-weight:bold; }
-.nav-links a.active::after { content:""; position:absolute; left:0; bottom:-5px; width:100%; height:3px; background: linear-gradient(90deg,#00c3ff,#0072ff); border-radius:5px; }
+.nav-links a { position:relative; padding:5px 8px; transition:0.3s;}
+.nav-links a:hover, .nav-links a.active { color:#00c3ff; }
+.nav-links a.active::after { 
+    content:""; position:absolute; left:0; bottom:-5px; 
+    width:100%; height:3px; background: linear-gradient(90deg,#00c3ff,#0072ff); 
+}
 #themeToggle { background:none; border:none; font-size:22px; cursor:pointer; color:white; }
 
-/* MAIN */
+/* ---------------- 4. MAIN CONTENT & CARDS ---------------- */
 main { max-width:900px; margin:40px auto; padding:0 20px; }
 
-/* CARD */
-.card { background:white; padding:25px; margin-bottom:30px; border-radius:15px; border-left:6px solid #00c3ff; box-shadow:0 10px 25px rgba(0,0,0,0.08); transition: transform 0.4s, box-shadow 0.4s;}
+.card { 
+    background:white; padding:25px; margin-bottom:30px; border-radius:15px; 
+    border-left:6px solid #00c3ff; box-shadow:0 10px 25px rgba(0,0,0,0.08); 
+    transition: 0.4s;
+}
+body.dark .card { background:#1e1e1e; color: white; border-left-color: #bc13fe; }
+
 .card:hover { transform:translateY(-6px); box-shadow:0 15px 35px rgba(0,0,0,0.15);}
-.card h2 { background:linear-gradient(90deg,#00c3ff,#0072ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent;}
+.card h2 { background:linear-gradient(90deg,#00c3ff,#0072ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom: 15px;}
 
-/* GLASS EFFECT + GLOW */
-.glass-card { background: rgba(255,255,255,0.05); backdrop-filter:blur(10px); border-radius:15px; padding:20px; border:1px solid rgba(255,255,255,0.1); transition:0.4s ease; }
-.glow-blue:hover { box-shadow:0 0 25px #00d2ff; border:1px solid #00d2ff; transform:scale(1.02);}
-.glow-purple:hover { box-shadow:0 0 25px #9d50bb; border:1px solid #9d50bb; }
+/* Glow Effects */
+.glow-blue:hover { box-shadow:0 0 25px #00d2ff; }
+.glow-purple:hover { box-shadow:0 0 25px #bc13fe; }
 
-/* ABOUT IMAGE */
-.about-card { text-align:center; }
-.profile-img { width:160px; height:160px; object-fit:cover; margin-bottom:15px; border-radius:50%; border:3px solid #00d2ff; animation:pulse 2s infinite;}
+/* ---------------- 5. PROJECTS GRID ---------------- */
+.projects-grid { 
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; background:rgba(255,255,255,0.05); padding:15px; border-radius:15px; border: 1px solid rgba(188, 19, 254, 0.2); text-align: center;transition: 0.3s ease;
+}
+.project-card:hover { 
+    transform: translateY(-10px); 
+    border-color: #bc13fe; 
+    box-shadow: 0 10px 20px rgba(188, 19, 254, 0.2);
+}
+.project-card { 
+    background:rgba(255,255,255,0.05); padding:15px; border-radius:15px; 
+    border: 1px solid rgba(188, 19, 254, 0.2); transition: 0.3s;
+}
+.project-card:hover { transform: scale(1.03); border-color: #bc13fe; }
+
+/* ---------------- 6. SOCIAL MEDIA ICONS ---------------- */
+.social-links {
+    display: flex; justify-content: center; gap: 25px; margin-top: 25px;
+}
+.s-icon { font-size: 35px; transition: 0.4s; }
+.whatsapp { color: #25D366; }
+.facebook { color: #1877F2; }
+.tiktok { color: #ffffff; } /* Dark mode එකේදී සුදු පාටට පෙනේ */
+.s-icon:hover { transform: translateY(-10px); filter: drop-shadow(0 0 10px currentColor); }
+
+/* ---------------- 7. PRELOADER & BUTTERFLIES ---------------- */
+#preloader {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 100000; transition: opacity 1s ease;
+}
+
+.butterfly-area {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+    overflow: hidden; pointer-events: none; z-index: 9999;
+}
+
+.butterfly {
+    position: absolute; width: 25px; height: 25px;
+    background: rgba(188, 19, 254, 0.8); border-radius: 50% 50% 0% 50%;
+    box-shadow: 0 0 15px #bc13fe; opacity: 0;
+    animation: flap 0.2s infinite ease-in-out, flyAround 12s linear infinite;
+}
+
+.butterfly::after {
+    content: ''; position: absolute; width: 25px; height: 25px;
+    background: inherit; border-radius: 50% 50% 50% 0; left: 15px;
+}
+
+@keyframes flap {
+    0%, 100% { transform: scaleX(1) rotate(-10deg); }
+    50% { transform: scaleX(0.3) rotate(10deg); }
+}
+
+@keyframes flyAround {
+   0% { 
+        transform: translate(-10vh, 100vh) rotate(0deg); 
+        opacity: 0; 
+    }
+    10% { opacity: 1; }
+    25% { 
+        transform: translate(20vh, 40vh) rotate(45deg); 
+    }
+    50% { 
+        transform: translate(80vh, 70vh) rotate(-20deg); 
+    }
+    75% { 
+        transform: translate(40vh, 10vh) rotate(60deg); 
+    }
+    100% { 
+        transform: translate(110vh, -20vh) rotate(0deg); 
+        opacity: 0; 
+    }
+}
+
+/* Butterfly Positions & Colors */
+.b1 { left: 5%; animation-delay: 0s; filter: hue-rotate(0deg); }
+.b2 { left: 15%; animation-delay: 2s; filter: hue-rotate(40deg); }
+.b3 { left: 25%; animation-delay: 4s; filter: hue-rotate(80deg); }
+.b4 { left: 35%; animation-delay: 1s; filter: hue-rotate(120deg); }
+.b5 { left: 45%; animation-delay: 3s; filter: hue-rotate(160deg); }
+.b6 { left: 55%; animation-delay: 5s; filter: hue-rotate(200deg); }
+.b7 { left: 65%; animation-delay: 2s; filter: hue-rotate(240deg); }
+.b8 { left: 75%; animation-delay: 6s; filter: hue-rotate(280deg); }
+.b9 { left: 85%; animation-delay: 1s; filter: hue-rotate(320deg); }
+.b10 { left: 95%; animation-delay: 4s; filter: hue-rotate(360deg); }
+.b11 { left: 10%; animation-delay: 7s; }
+.b12 { left: 30%; animation-delay: 8s; }
+.b13 { left: 50%; animation-delay: 9s; }
+.b14 { left: 70%; animation-delay: 10s; }
+.b15 { left: 90%; animation-delay: 1.5s; }
+.b16 { left: 20%; animation-delay: 5.5s; }
+
+/* ---------------- 8. OTHER UI ELEMENTS ---------------- */
+.profile-img { 
+    width:160px; height:160px; object-fit:cover; border-radius:50%; 
+    border:3px solid #00d2ff; animation:pulse 2s infinite;
+}
 @keyframes pulse {0% { box-shadow:0 0 10px #00c3ff;} 100% { box-shadow:0 0 25px #00e5ff;}}
 
-/* PROJECTS GRID */
-.projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
-.project { background:#f0f0f0; padding:15px; border-radius:10px; transition: transform 0.3s; }
-.project:hover { transform:translateY(-5px); }
+input, textarea { 
+    width: 100%; padding:12px; margin-bottom: 10px; border-radius:8px; 
+    border:1px solid #ccc; background: white;
+}
+body.dark input, body.dark textarea { background: #2a2a2a; color: white; border-color: #444; }
 
-/* FORM */
-form { display:flex; flex-direction:column; gap:12px; }
-input,textarea { padding:10px; border-radius:8px; border:1px solid #ccc; font-size:15px; }
-button { padding:12px; background:#00c3ff; border:none; border-radius:10px; color:white; font-size:16px; cursor:pointer; transition:0.3s;}
-button:hover { background:#0099cc; }
+button { 
+    padding:12px 25px; background:#00c3ff; border:none; border-radius:10px; 
+    color:white; cursor:pointer; font-weight: bold;
+}
+button:hover { background:#0072ff; }
 
-/* FOOTER */
-footer { text-align:center; padding:15px; background:#111; color:white; }
+footer { text-align:center; padding:20px; background:#111; color:white; margin-top: 40px; }
 
-/* DARK MODE FIXES */
-body.dark .header { background:#000; }
-body.dark .card { background:#1e1e1e; }
-body.dark input, body.dark textarea { background:#1e1e1e; color:white; border:1px solid #444;}
-body.dark .profile-img { border-color:#00e5ff; }
+/* Scroll Animation Class */
+.animate { opacity:0; transform:translateY(40px); transition: 0.8s ease-out; }
+.animate.show { opacity:1; transform:translateY(0); }
 
-/* SCROLL ANIMATION */
-.animate { opacity:0; transform:translateY(40px) scale(0.95);}
-.animate.show { opacity:1; transform:translateY(0) scale(1); transition: all 0.9s ease;}
-
-/* background */
+/* ---------------- 9. PRELOADER ---------------- */
 #preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
     background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 100000;
-    overflow: hidden;
-    transition: opacity 1s ease;
+    display: flex; justify-content: center; align-items: center;
+    z-index: 100000; transition: opacity 1s ease;
 }
+.loader-hidden { opacity: 0; pointer-events: none; }
 
-/* box(Desktop & Mobile ) */
-.loader-box {
-    background: rgba(255, 255, 255, 0.9);
-    width: 90%; 
-    max-width: 400px; 
-    padding: 30px;
-    border-radius: 25px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    text-align: center;
-    backdrop-filter: blur(10px);
-    border: 2px solid #fff;
-    position: relative;
-}
-
-/* auto resize  */
-.princess-img {
-    width: 60%;
-    max-width: 180px;
-    margin-bottom: 20px;
-}
-
-.welcome-text {
-    font-family: 'Poppins', sans-serif;
-    color: #ff4081;
-    font-size: clamp(20px, 5vw, 28px); /* Screen එක අනුව අකුරු වල ප්‍රමාණය වෙනස් වේ */
-    margin-bottom: 20px;
-}
-
-
-.loading-bar {
-    width: 100%;
-    height: 6px;
-    background: #eee;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.loading-progress {
-    width: 0;
-    height: 100%;
-    background: #ff4081;
-    animation: loadProgress 3s forwards;
-}
-
-@keyframes loadProgress {
-    to { width: 100%; }
-}
-
-/* fly */
-.butterfly {
-    position: absolute;
-    width: 35px;
-    height: 35px;
-    background: url('https://cdn-icons-png.flaticon.com/512/1043/1043514.png') no-repeat;
-    background-size: contain;
-    animation: fly-across 10s linear infinite;
-    opacity: 0.5;
-}
-
-.butterfly:nth-child(1) { top: 10%; left: -10%; animation-delay: 0s; }
-.butterfly:nth-child(2) { top: 40%; left: -10%; animation-delay: 3s; }
-.butterfly:nth-child(3) { top: 70%; left: -10%; animation-delay: 6s; }
-
-@keyframes fly-across {
-    0% { left: -10%; transform: rotate(0); }
-    100% { left: 110%; transform: rotate(20deg); }
-}
-
-/* හංගන කොටස */
-.loader-hidden {
-    opacity: 0;
-    pointer-events: none;
+/* ---------------- 9. MOBILE RESPONSIVE ---------------- */
+@media (max-width: 600px) {
+    .header { padding: 10px 15px; }
+    .logo { font-size: 18px; }
+    .nav-links { gap: 10px; font-size: 12px; }
+    main { margin: 20px auto; padding: 0 15px; }
+    .profile-img { width: 110px; height: 110px; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .s-icon { font-size: 28px; }
 }
